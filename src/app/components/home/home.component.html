@@ -1,0 +1,327 @@
+<div
+  id="carouselExampleAutoplaying"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img
+        src="https://images.pexels.com/videos/2059917/free-video-2059917.jpg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item active">
+      <img
+        src="https://www.onmsft.com/wp-content/uploads/2015/09/processor-gram-feature.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://cdn.mos.cms.futurecdn.net/bb22f67153c6198ab5fdddb0627c9976-1200-80.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleAutoplaying"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleAutoplaying"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- ***********************************  Top-products  *************************************************** -->
+<section class="products top-products section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="title text-center m-5 HomeSection">
+          <h2>Trending Laptops</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="">
+          <div class="row">
+            <!-- card -->
+            <div
+              class="col-md-4 col-lg-3 mt-2 card-wrapper col-sm-8 "
+              *ngFor="let p of topProducts "
+            >
+              <div class="card mb-3">
+                <div class="card-body p-0 pb-3" style="max-height: 200px">
+                  <div *ngIf="p.price != p.priceAfter" class="sale">
+                    {{ p.discount }}% OFF
+                  </div>
+                  <div class="addposition">
+                    <span class="badge badge-primary badge-new">New</span>
+                  </div>
+
+                  <div class="card-img-actions">
+                    <img
+                      src="{{ p.image }}"
+                      class="card-img rounded-0"
+                      height="200px"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="card-body text-center bg-light">
+                  <div class="mb-2 h-25">
+                    <h5 class="font-weight-semibold mb-2 text-white">
+                      <a
+                        routerLink="/Products/{{ p.id }}"
+                        class="text-default mb-2 nameColor"
+                        data-abc="true"
+                      >
+                        {{ p.name }}
+                      </a>
+                    </h5>
+                  </div>
+                  <div class="h-25">
+                    <h4 class="mb-0 font-weight-semibold text-success">
+                      ${{ p.priceAfter }}
+                    </h4>
+                    <h5 *ngIf="p.price != p.priceAfter" class="oldPrice">
+                      ${{ p.price }}
+                    </h5>
+                  </div>
+                  <div class="mt-2">
+                    <p>
+                      Rating :
+                      <svg
+                        *ngFor="let star of generateStars(p.avgRatingRounded)"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          class="star-rating"
+                          *ngIf="star === 'full'"
+                          d="M12 2 L15.09 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L12 2"
+                        ></path>
+                        <path
+                          class="star-rating"
+                          *ngIf="star === 'half'"
+                          d="M11.5 2 L14.59 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L11.5 2Z"
+                        ></path>
+                        <path
+                          *ngIf="star === 'empty'"
+                          d="M12 2 L15.09 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L12 2"
+                          class="empty-star"
+                        ></path>
+                      </svg>
+                    </p>
+                  </div>
+                  <div class="text-muted mb-1">{{ p.reviewCount }} reviews</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ******************************* Special-products ******************************************* -->
+<section class="products New-products section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="title text-center m-5 HomeSection">
+          <h2>Special products</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="">
+          <div class="row">
+            <!-- card -->
+            <div
+              class="col-md-4 col-lg-3 mt-2 card-wrapper col-sm-8 "
+              *ngFor="let p of specialProducts"
+            >
+              <div class="card mb-3">
+                <div class="card-body p-0 pb-3" style="max-height: 200px">
+                  <div *ngIf="p.price != p.priceAfter" class="sale">
+                    {{ p.discount }}% OFF
+                  </div>
+                  <div class="addposition">
+                    <span class="badge badge-primary badge-new">New</span>
+                  </div>
+
+                  <div class="card-img-actions">
+                    <img
+                      src="{{ p.image }}"
+                      class="card-img rounded-0"
+                      height="200px"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="card-body text-center bg-light">
+                  <div class="mb-2 h-25">
+                    <h5 class="font-weight-semibold mb-2 text-white">
+                      <a
+                        routerLink="/Products/{{ p.id }}"
+                        class="text-default mb-2 nameColor"
+                        data-abc="true"
+                      >
+                        {{ p.name }}
+                      </a>
+                    </h5>
+                  </div>
+                  <div class="h-25">
+                    <h4 class="mb-0 font-weight-semibold text-success">
+                      ${{ p.priceAfter }}
+                    </h4>
+                    <h5 *ngIf="p.price != p.priceAfter" class="oldPrice">
+                      ${{ p.price }}
+                    </h5>
+                  </div>
+                  <div class="mt-2">
+                    <p>
+                      Rating :
+                      <svg
+                        *ngFor="let star of generateStars(p.avgRatingRounded)"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          class="star-rating"
+                          *ngIf="star === 'full'"
+                          d="M12 2 L15.09 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L12 2"
+                        ></path>
+                        <path
+                          class="star-rating"
+                          *ngIf="star === 'half'"
+                          d="M11.5 2 L14.59 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L11.5 2Z"
+                        ></path>
+                        <path
+                          *ngIf="star === 'empty'"
+                          d="M12 2 L15.09 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L12 2"
+                          class="empty-star"
+                        ></path>
+                      </svg>
+                    </p>
+                  </div>
+                  <div class="text-muted mb-1">{{ p.reviewCount }} reviews</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ******************************* New-products ******************************************* -->
+
+<section class="products New-products section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="title text-center m-5 HomeSection">
+          <h2>New Arrival</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="">
+          <div class="row">
+            <!-- card -->
+            <div
+              class="col-md-4 col-lg-3 mt-2 card-wrapper col-sm-8 "
+              *ngFor="let p of NewProducts"
+            >
+              <div class="card mb-3">
+                <div class="card-body p-0 pb-3" style="max-height: 200px">
+                  <div *ngIf="p.price != p.priceAfter" class="sale">
+                    {{ p.discount }}% OFF
+                  </div>
+                  <div class="addposition">
+                    <span class="badge badge-primary badge-new">New</span>
+                  </div>
+
+                  <div class="card-img-actions">
+                    <img
+                      src="{{ p.image }}"
+                      class="card-img rounded-0"
+                      height="200px"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="card-body text-center bg-light">
+                  <div class="mb-2 h-25">
+                    <h5 class="font-weight-semibold mb-2 text-white">
+                      <a
+                        routerLink="/Products/{{ p.id }}"
+                        class="text-default mb-2 nameColor"
+                        data-abc="true"
+                      >
+                        {{ p.name }}
+                      </a>
+                    </h5>
+                  </div>
+                  <div class="h-25">
+                    <h4 class="mb-0 font-weight-semibold text-success">
+                      ${{ p.priceAfter }}
+                    </h4>
+                    <h5 *ngIf="p.price != p.priceAfter" class="oldPrice">
+                      ${{ p.price }}
+                    </h5>
+                  </div>
+                  <div class="mt-2">
+                    <p>
+                      Rating :
+                      <svg
+                        *ngFor="let star of generateStars(p.avgRatingRounded)"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          class="star-rating"
+                          *ngIf="star === 'full'"
+                          d="M12 2 L15.09 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L12 2"
+                        ></path>
+                        <path
+                          class="star-rating"
+                          *ngIf="star === 'half'"
+                          d="M11.5 2 L14.59 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L11.5 2Z"
+                        ></path>
+                        <path
+                          *ngIf="star === 'empty'"
+                          d="M12 2 L15.09 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L12 2"
+                          class="empty-star"
+                        ></path>
+                      </svg>
+                    </p>
+                  </div>
+                  <div class="text-muted mb-1">{{ p.reviewCount }} reviews</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ********************test************************* -->

@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="title logocolortxt" style="margin-top: 30px">Edit Product</div>
+  <form #propertyForm="ngForm" (ngSubmit)="updateProperty(propertyForm)">
+    <!--Property name field-->
+
+    <div class="row mt-4">
+      <mat-form-field appearance="outline" class="col-12">
+        <mat-label>Name:</mat-label>
+        <input matInput [(ngModel)]="oldProperty.name" name="productName" required #productName="ngModel" />
+        <mat-error *ngIf="!productName.name">Name is required</mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <!-- discount -->
+    <div class="row mt-4">
+      <mat-form-field appearance="outline" class="col-12">
+        <mat-label>discount:</mat-label>
+        <input matInput name="propertydiscount" #propertydiscount="ngModel" [(ngModel)]="oldProperty.discount"
+          required />
+        <mat-error *ngIf="propertydiscount.invalid">discount is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- <pop image> -->
+    <div class="row mt-4">
+      <button mat-raised-button class="logocolor text-white" type="button" (click)="openImagePopup()">
+        View Images
+      </button>
+    </div>
+
+    <!-- category -->
+    <div class="row my-4">
+      <!-- Category -->
+      <mat-form-field class="col-12 col-md-6 col-lg-6" appearance="outline">
+        <mat-label>Category:</mat-label>
+        <mat-select [(ngModel)]="selectedCategory" name="category" required>
+          <mat-option value="">Select Category</mat-option>
+          <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!selectedCategory">Category is required</mat-error>
+      </mat-form-field>
+      <!--Amenities field-->
+
+    </div>
+
+
+    <!-- price -->
+    <div class="row my-4">
+      <!--Max Number of Guests-->
+
+
+      <!--Price per night field-->
+      <mat-form-field class="col-6 col-md-6" appearance="outline">
+        <mat-label>Price:</mat-label>
+        <input matInput [(ngModel)]="oldProperty.price" name="pricePerNight" type="number" required min="5" />
+        <mat-error *ngIf="propertyForm.controls['pricePerNight']?.errors">Price has a minimum of 5</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- description -->
+    <div class="row mt-3">
+      <mat-form-field class="col-12" appearance="outline">
+        <mat-label>Description:</mat-label>
+        <textarea matInput [(ngModel)]="oldProperty.description" name="description" required></textarea>
+        <mat-error *ngIf="propertyForm.controls['description']?.errors">Description is required</mat-error>
+      </mat-form-field>
+    </div>
+
+
+
+
+    <!-- model -->
+    <div class="row mt-3">
+      <mat-form-field class="col-12" appearance="outline">
+        <mat-label>Model:</mat-label>
+        <textarea matInput [(ngModel)]="oldProperty.model" name="model" required></textarea>
+        <mat-error *ngIf="propertyForm.controls['model']?.errors">model is required</mat-error>
+      </mat-form-field>
+    </div>
+
+
+
+
+    <div class="row mt-3">
+      <button mat-raised-button type="submit" class="logocolor text-white w-50">
+        Update Product
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="d-grid gap-2 d-md-block m-5">
+  <a class="btn btn-primary logocolor" routerLink="/dashboard/products"><i class="fas fa-arrow-left"
+      style="color: #FFFFFF;"></i> Go To Products</a>
+</div>

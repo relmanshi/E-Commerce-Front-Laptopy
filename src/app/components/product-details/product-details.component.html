@@ -1,0 +1,388 @@
+<section class="single-product m-5" *ngIf="product">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="single-product-slider">
+          <div
+            id="single-product-slider"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div *ngIf="product.price != product.priceAfter" class="sale">
+                  {{ product.discount }}% OFF
+                </div>
+                <!-- <img src="{{ product.image }}" alt="" class="img-fluid" /> -->
+                <div
+                  id="carouselExampleControls"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div
+                      *ngFor="let i of product.images"
+                      class="carousel-item active"
+                    >
+                      <img src="{{ i }}" class="d-block w-100" alt="..." />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  <div class="small-images">
+            <img src="{{ product.image }}" alt="" class="img-fluid">
+            <img src="{{ product.image }}" alt="" class="img-fluid">
+            <img src="{{ product.image }}" alt="" class="img-fluid">
+          </div> -->
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="single-product-details mt-5 mt-lg-0">
+          <h2 class="CustomDarkText">{{ product.name }}</h2>
+          <hr />
+          <h4 class="product-price text-success">${{ product.priceAfter }}</h4>
+          <h5 *ngIf="product.price != product.priceAfter" class="oldPrice">
+            ${{ product.price }}
+          </h5>
+          <p class="product-description my-4">
+            <strong>Description : </strong>{{ product.description }}
+          </p>
+          <div class="products-meta mt-4">
+            <div class="product-category">
+              <span class="font-weight-bold text-capitalize product-meta-title">
+                <strong>Brand :</strong> {{ product.categoryName }}
+              </span>
+              <br />
+              <span class="font-weight-bold text-capitalize product-meta-title">
+                <strong>Model :</strong> {{ product.model }}
+              </span>
+            </div>
+            <div class="">
+              <form class="cart" action="#" method="post">
+                <div
+                  class="quantity d-flex flex-column flex-sm-row align-items-center justify-content-between"
+                >
+                  <div class="quantity d-flex align-items-center">
+                    <label class="form-label mr-3" for="form1"
+                      ><strong>Quantity </strong></label
+                    >
+                    <div class="form-outline">
+                      <select
+                        [(ngModel)]="ProductQuantity"
+                        id="form1"
+                        name="quantity"
+                        class="input-text qty text form-control w-25 mr-3"
+                        class="form-select mb-3"
+                        aria-label=".form-select-lg example"
+                      >
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- <button
+                  href="#"
+                  class="btn btn-primary btn-small m-3"
+                  (click)="AddProductToUserCart()"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>Add to cart
+                </button> -->
+
+                  <button
+                    class="CartBtn m-3 mt-2 col-12"
+                    (click)="AddProductToUserCart()"
+                  >
+                    <span class="IconContainer">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 576 512"
+                        fill="rgb(256, 256, 256)"
+                        class="cart"
+                      >
+                        <path
+                          d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <p class="text mb-0">Add to Cart</p>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <nav class="product-info-tabs wc-tabs mt-5 mb-5">
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a
+              class="nav-item nav-link active"
+              id="nav-home-tab"
+              data-bs-toggle="tab"
+              href="#nav-home"
+              role="tab"
+              aria-controls="nav-home "
+              aria-selected="true"
+              (click)="openTab('nav-home')"
+              >Description</a
+            >
+            <!--  -->
+            <a
+              class="nav-item nav-link"
+              id="nav-profile-tab"
+              data-bs-toggle="tab"
+              href="#nav-profile"
+              role="tab"
+              aria-controls="nav-profile"
+              aria-selected="false"
+              (click)="openTab('nav-profile')"
+              >Specifications</a
+            >
+            <a
+              class="nav-item nav-link"
+              id="nav-contact-tab"
+              data-bs-toggle="tab"
+              href="#nav-contact"
+              role="tab"
+              aria-controls="nav-contact"
+              aria-selected="false"
+              (click)="openTab('nav-contact')"
+              >Reviews({{ product.reviewCount }})</a
+            >
+          </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="nav-home"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"
+          >
+            <p>{{ product.description }}</p>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="nav-profile"
+            role="tabpanel"
+            aria-labelledby="nav-profile-tab"
+          >
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th scope="row">Brand</th>
+                  <td>{{ product.categoryName }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Model</th>
+                  <td>{{ product.model }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="nav-contact"
+            role="tabpanel"
+            aria-labelledby="nav-contact-tab"
+          >
+            <!--  -->
+            <div class="container text-center">
+              <div
+                class="d-flex flex-column flex-sm-row flex-wrap mb-md-0 justify-content-center"
+              >
+                <div
+                  class="card col-sm-5 col-md-3 m-1"
+                  *ngFor="let review of product.reviews"
+                >
+                  <div class="card-body py-4 mt-1">
+                    <div class="d-flex justify-content-center mb-4">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/747/747545.png"
+                        class="rounded-circle shadow-1-strong"
+                        width="100"
+                        height="100"
+                      />
+                    </div>
+                    <h5 class="font-weight-bold">
+                      {{ review.fName }} {{ review.lName }}
+                    </h5>
+                    <h6 class="font-weight-bold my-3">
+                      {{ review.formattedCreationDate }}
+                    </h6>
+                    <ul class="list-unstyled d-flex justify-content-center">
+                      <li *ngFor="let star of getReviewStars(review.rating)">
+                        <i class="fas fa-star fa-sm text-warning"></i>
+                      </li>
+                    </ul>
+                    <p class="mb-2">
+                      <i class="fas fa-quote-left pe-2"></i>{{ review.comment }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- *********************************Related Products******************************** -->
+
+<section class="products Related-products section" *ngIf="relatedProducts">
+  <div class="container">
+    <div class="row">
+      <div class="row">
+        <section class="products New-products section">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-12">
+                <div
+                  class="title text-center p-1 p-md-2 my-2 m-sm-5 HomeSection"
+                >
+                  <h2>You May Like That</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="">
+                  <div class="row">
+                    <!-- card -->
+                    <div
+                      class="col-md-4 col-lg-3 mt-2 card-wrapper col-sm-8"
+                      *ngFor="let p of relatedProducts"
+                    >
+                      <div class="card mb-3">
+                        <div
+                          class="card-body p-0 pb-3"
+                          style="max-height: 200px"
+                        >
+                          <div *ngIf="p.price != p.priceAfter" class="sale">
+                            {{ p.discount }}% OFF
+                          </div>
+                          <div class="addposition">
+                            <span class="badge badge-primary badge-new"
+                              >New</span
+                            >
+                          </div>
+
+                          <div class="card-img-actions">
+                            <img
+                              src="{{ p.image }}"
+                              class="card-img rounded-0"
+                              height="200px"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="card-body text-center bg-light">
+                          <div class="mb-2 h-25">
+                            <h5 class="font-weight-semibold mb-2 text-white">
+                              <a
+                                (click)="openRelatedProductDetails(p)"
+                                routerLink="/Products/{{ p.id }}"
+                                class="text-default mb-2"
+                                data-abc="true"
+                              >
+                                {{ p.name }}
+                              </a>
+                            </h5>
+                          </div>
+                          <div class="h-25">
+                            <h4 class="mb-0 font-weight-semibold text-success">
+                              ${{ p.priceAfter }}
+                            </h4>
+                            <h5
+                              *ngIf="p.price != p.priceAfter"
+                              class="oldPrice"
+                            >
+                              ${{ p.price }}
+                            </h5>
+                          </div>
+                          <div class="mt-2">
+                            <p>
+                              Rating :
+                              <svg
+                                *ngFor="
+                                  let star of generateStars(p.avgRatingRounded)
+                                "
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="1em"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  class="star-rating"
+                                  *ngIf="star === 'full'"
+                                  d="M12 2 L15.09 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L12 2"
+                                ></path>
+                                <path
+                                  class="star-rating"
+                                  *ngIf="star === 'half'"
+                                  d="M11.5 2 L14.59 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L11.5 2Z"
+                                ></path>
+                                <path
+                                  *ngIf="star === 'empty'"
+                                  d="M12 2 L15.09 8.18 L22 9 L16.5 13.39 L18.36 20 L12 17.77 L5.64 20 L7.5 13.39 L2 9 L8.91 8.18 L12 2"
+                                  class="empty-star"
+                                ></path>
+                              </svg>
+                            </p>
+                          </div>
+                          <div class="text-muted mb-1">
+                            {{ p.reviewCount }} reviews
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>

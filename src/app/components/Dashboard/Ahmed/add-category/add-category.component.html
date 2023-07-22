@@ -1,0 +1,14 @@
+<div class="d-flex flex-column justify-content-center mx-3">
+    <form [formGroup]="form">
+        <div class="form-group mt-sm-3">
+            <label for="category-name" class="fs-5 mb-sm-2">Category Name</label>
+            <input type="text" class="form-control p-2" id="category-name" formControlName="CategoryName" />
+        </div>
+
+        <div class="form-group text-center mt-sm-5">
+            <button (click)="addCategory()" type="submit" class="btn btn-success logocolor bt-lg w-50 fs-5 fw-bold">
+                Add Category
+            </button>
+        </div>
+    </form>
+</div>

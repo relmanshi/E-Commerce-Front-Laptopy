@@ -1,0 +1,48 @@
+<div class="container-fluid my-3">
+    <div class="grid grid-cols-12 gap-6 mt-5 ">
+        <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
+            <a class="btn btn-primary shadow-md mr-2 lightcolor" (click)="openAddPopup()">Add New Category</a>
+        </div>
+        <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+            <table class="table table-report -mt-2">
+                <thead>
+                    <tr>
+                        <th class="whitespace-nowrap">No.</th>
+                        <th class="whitespace-nowrap">Category Name</th>
+                        <th class="whitespace-nowrap">No of Products</th>
+                        <th class="text-center whitespace-nowrap">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="intro-x" *ngFor="let item of Categories; let i = index">
+                        <td class="w-40">
+                            {{i + 1}}
+                        </td>
+                        <td>
+                            <a class="font-medium whitespace-nowrap">{{item.name}}</a>
+                            <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5 text-white">.</div>
+                        </td>
+                        <td>
+                            <a class="text-slate-500 flex items-center mr-3">
+                                {{item.noOfProducts}}
+                            </a>
+                        </td>
+                        <td class="table-report__action w-56">
+                            <div class="flexxx justify-center items-center">
+                                <a class="flex items-center mr-3 logocolortxt pointer" (click)="openEditPopup(item.id)">
+                                    <i class="fa-solid fa-pen-to-square fa-xl mr-1 logocolortxt pointer"></i> Edit
+                                </a>
+
+                                <button>
+                                    <a class="flex items-center text-danger" (click)="del(item.id)">
+                                        <i class="fa-solid fa-trash-can fa-xl mr-1"></i> Delete
+                                    </a>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.zoom {
+  transition: transform 0.2s;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+}
+
+section {
+  background-color: #eee;
+}
+
+li {
+  list-style: none;
+  color: #164e63;
+}
+
+li p {
+  color: #164e63;
+}
+
+.roundedd {
+  border-radius: 10%;
+}
+
+.background {
+  background-color: #0e7490;
+}
+
+.move-right {
+  margin-left: 60%;
+  margin-top: -5%;
+  position: relative;
+  bottom: 25px;
+}
+
+.adjust {
+  border-radius: 15px;
+  margin-left: 8% !important;
+  /* padding: 0 !important; */
+  margin-bottom: 2% !important;
+}
+
+.ml-3{
+  margin-left: 10px;
+}
+#title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -1,0 +1,118 @@
+/* CSS Code for Nav:- */
+
+.header {
+  z-index: 9999999999999999;
+}
+
+#logo {
+  margin-right: 20px;
+}
+
+.navbar .container .collapse .navbar-nav .nav-link {
+  color: rgb(149, 8, 8);
+}
+
+.navbar .container .collapse .navbar-nav .nav-link:hover {
+  color: #fa0;
+}
+
+.navbar button[aria-expanded="true"] {
+  border-color: #fa0;
+  box-shadow: none;
+}
+
+.navbar button[aria-expanded="false"] {
+  box-shadow: none;
+}
+
+mat-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+/* abdo cart */
+ul li a.cart {
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+}
+
+ul li a.cart:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+ul li a.cart .cart-basket {
+  font-size: 0.6rem;
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  width: 15px;
+  height: 15px;
+  color: #fff;
+  background-color: #418deb;
+  border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+  .fill-remaining-space {
+    display: none;
+  }
+}
+
+.general-color {
+  color: #164e63;
+}
+
+.general-background {
+  background-color: #164e63;
+}
+
+.arrow-icon {
+  margin-left: 8px;
+}
+
+.arrow {
+  margin-right: 0px !important;
+}
+
+.angular-btn {
+  margin-top: 1px;
+}
+
+.hoverWhite:hover {
+  color: #fff !important;
+}
+
+.nav-link.btn.btn-success.hoverWhite.active {
+  color: #FFF !important;
+}
+
+#loginBtn:active {
+  border-bottom: none !important;
+}
+
+.zindex {
+  z-index: 9999999999999999999999999999;
+}
+
+.nav-link.btn.hoverWhite.active {
+  color: #fff;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #16536a;
+  border-bottom: 2px solid #16536a;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+  color: #16536a;
+  border-bottom: 2px solid #16536a;
+}

@@ -1,0 +1,112 @@
+<div class="container d-flex justify-content-center m-0 p-0">
+<div class="col-lg-4 m-0 p-0">
+    <app-profile></app-profile>
+</div>
+    <!--<div class="col-lg-8" >
+        <div let *ngFor="let o of orders">
+            <div class="card m-3" style="width: 18rem;"routerLink="/Order/Details/{{o.id}}">
+                <img  *ngFor="let p of o.products"src="{{p.image}}" class="card-img-top">
+                <div class="card-body">
+                  <p class="m-3 px-3">{{o.id}}</p>
+                  <p class="m-3 px-3">{{o.orderStatus}}</p>
+                  <p class="m-3 px-3">{{o.deliverdDate}}</p>
+                  <p class="m-3 px-3">{{o.address_Id}}</p>
+                  <p *ngFor="let p of o.products" class="px-3">{{p.title}}</p>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+</div>
+<div class="container d-flex justify-content-center ">
+    <div class="col-lg-3 m-0 p-0 sticky">
+        <app-profile></app-profile>
+    </div>
+
+<div let *ngFor="let o of orders">
+
+<div class="card m-3" style="width: 18rem;"routerLink="/Order/Details/{{o.id}}" >
+    <div class="card-body">
+      <h6 class="card-title">Order Id: {{o.id}}</h6>
+      <p>Order Status: {{o.orderStatus}}</p>
+      <p>Delivery Status: {{o.deliverdDate}}</p>
+      <p *ngFor="let p of o.products">Product Name (Model): {{p.title}}</p>
+    </div>
+</div>   
+  </div>
+  </div>
+-->
+<!--<table class="table ">
+    <thead>
+      <tr>
+        <th scope="col" class="colour-general">Order Id</th>
+        <th scope="col" class="colour-general">Status</th>
+        <th scope="col" class="colour-general">Delivered Date</th>
+       - <th scope="col" class="colour-general">Product Title</th>--
+        <th scope="col" class="colour-general">Details</th>
+      </tr>
+    </thead>
+    <tbody let *ngFor="let o of orders">
+      <tr>
+        <th scope="row"class="colour-general">#{{o.id}}</th>
+        <td class="colour-general">{{o.orderStatus}}</td>
+        <td class="colour-general">{{o.deliverdDate}}</td>
+       <td> <button type="button" class="btn btn-primary mt-3"routerLink="/Order/Details/{{o.id}}">Details</button></td>
+        
+            -<select>
+                <optgroup *ngFor="let p of o.products" class="d-flex colour-general dropdown">
+                    <option>
+                        <p class="colour-general">{{p.title}}</p>
+                    </option>
+                </optgroup>
+            </select>-->
+           <!--<li>{{p.title}}</li> --
+       
+
+      </tr>
+
+    </tbody>
+  </table>-->
+  <div class="container-fluid my-3">
+    <div class="grid grid-cols-12 gap-6 mt-5 ">
+        <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+            <table class="table table-report -mt-2">
+                <thead>
+                    <tr>
+                        <th class="whitespace-nowrap">Order Id</th>
+                        <th class="whitespace-nowrap">Status</th>
+                        <th class="whitespace-nowrap">Delivered Date</th>
+                        <th class="whitespace-nowrap">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="intro-x" *ngFor="let item of orders; let i = index">
+                        
+                        <td>
+                            <a href="" class="font-medium whitespace-nowrap">{{item.id}}</a>
+                        </td>
+                        <td>
+                            <a class="text-slate-500 flex items-center mr-3" href="javascript:;">
+                                {{item.orderStatus}}
+                            </a>
+                        </td>
+                        <td>
+                            <a class="text-slate-500 flex items-center mr-3" href="javascript:;">
+                                {{item.deliverdDate}}
+                            </a>
+                        </td>
+                        
+                       
+                        <td >
+                            <div>
+                                <a class="flex items-center mr-3 logocolortxt" routerLink="/Order/Details/{{item.id}}">
+                                     Details
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="container-fluid my-3">
+    <div class="grid grid-cols-12 gap-6 mt-5 ">
+      <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+        <table class="table table-report -mt-2">
+          <thead>
+            <tr>
+              <th class="whitespace-nowrap">No.</th>
+              <th class="whitespace-nowrap">User Name</th>
+              <th class="whitespace-nowrap">Email</th>
+              <th class="whitespace-nowrap">Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="intro-x" *ngFor="let item of contacts let i = index">
+              <td class="w-40">
+                {{i + 1}}
+              </td>
+              <td>
+                <a class="font-medium whitespace-nowrap">{{item.name}}</a>
+                <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5 text-white">.</div>
+              </td>
+              <td>
+                <a class="text-slate-500 flex items-center mr-3">
+                  {{item.email}}
+                </a>
+              </td>
+              <td>
+                <a class="text-slate-500 flex items-center mr-3">
+                  {{item.message}}
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

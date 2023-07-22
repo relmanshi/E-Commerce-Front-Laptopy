@@ -1,0 +1,61 @@
+<div class="container-fluid my-3">
+    <div class="grid grid-cols-12 gap-6 mt-5 ">
+        <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+            <table class="table table-report -mt-2">
+                <thead>
+                    <tr>
+                        <th class="whitespace-nowrap">No.</th>
+                        <th class="whitespace-nowrap">Order Date</th>
+                        <th class="whitespace-nowrap">User Name</th>
+                        <th class="whitespace-nowrap">Status</th>
+                        <th class="whitespace-nowrap">Products</th>
+                        <th class="whitespace-nowrap">Total Price</th>
+                        <th class="text-center whitespace-nowrap">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="intro-x" *ngFor="let item of Orders; let i = index">
+                        <td class="w-40">
+                            <div class="flex">
+                                <div class="w-10 h-10 image-fit zoom-in">
+                                    {{i + 1}}
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="" class="font-medium whitespace-nowrap">{{item.formattedCreationDate}}</a>
+                        </td>
+                        <td>
+                            <a class="text-slate-500 flex items-center mr-3" href="javascript:;">
+                                {{item.userName}}
+                            </a>
+                        </td>
+                        <td>
+                            <a class="text-slate-500 flex items-center mr-3" href="javascript:;">
+                                {{item.orderStatus}}
+                            </a>
+                        </td>
+                        <td>
+                            <a class="text-slate-500 flex items-center mr-3" href="javascript:;">
+                                {{item.productCount}}
+                            </a>
+                        </td>
+                        <td>
+                            <a class="text-slate-500 flex items-center mr-3" href="javascript:;">
+                                {{item.totalPrice}}
+                            </a>
+                        </td>
+                        <td class="table-report__action w-56">
+                            <div class="flexxx justify-center items-center">
+                                <a class="flex items-center mr-3 logocolortxt" routerLink="/dashboard/orders/{{item.id}}">
+                                    <i class="fa-solid fa-pen-to-square fa-xl mr-1 logocolortxt"
+                                        routerLink="/dashboard/orders/{{item.id}}"></i> Details
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

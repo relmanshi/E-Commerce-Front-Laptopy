@@ -1,0 +1,40 @@
+/* footer section*/
+
+/* .Bigfooter {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  /* adjust height as needed */
+/* height: 50px; 
+} */
+
+.footer_section {
+  font-family: "Poppins", sans-serif;
+  padding: 25px 20px;
+}
+
+.footer_section p {
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+.footer_section a,
+.info_section h5 {
+  color: #fff;
+}
+
+/* end footer section*/
+
+.z-3 {
+  z-index: 99999 !important;
+}
+
+.upperfooter a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.upperfooter a:hover {
+  text-decoration: underline;
+}

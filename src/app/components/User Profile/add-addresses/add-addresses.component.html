@@ -1,0 +1,92 @@
+<div class="container d-flex justify-content-space-between m-0 p-0">
+  <div class="col-lg-4 m-0">
+    <app-profile></app-profile>
+  </div>
+<div class="col-lg-8 general-background bg-light mt-5 roundedd"*ngIf="address" >
+    <form [formGroup]="form" class="d-flex justify-content-space-between flex-column adjust mt-5 roundedd">
+        
+          <div class="text-center mb-sm-5 bg-light coolinput mx-5 ">
+            <label for="input" class="text bg-light">City</label>
+            <input formControlName="city"  class="form-control p-3" type="text" placeholder="city" >
+            <div
+              *ngIf="
+              form.get('city')?.invalid &&
+              (form.get('city')?.touched || form.get('city')?.dirty)
+            "
+            >
+            <div
+              *ngIf="form.get('city')?.hasError('required')"
+              class="text-danger"
+            >
+              City is required.
+            </div>
+            <div
+              *ngIf="form.get('city')?.hasError('maxlength')"
+              class="text-danger"
+            >
+              Max length for City is 20 characters.
+            </div>
+            </div>
+        </div>
+
+
+        <div class="text-center mb-sm-5 bg-light coolinput mx-5 ">
+          <label for="input" class="text bg-light">Street</label>
+            <input formControlName="street"  class="form-control p-3 " type="text" placeholder="street" >
+            <div
+            *ngIf="
+              form.get('street')?.invalid &&
+              (form.get('street')?.touched || form.get('street')?.dirty)
+            "
+          >
+            <div
+              *ngIf="form.get('street')?.hasError('required')"
+              class="text-danger"
+            >
+                street is required.
+            </div>
+            <div
+              *ngIf="form.get('street')?.hasError('maxlength')"
+              class="text-danger"
+            >
+              Max length for street is 100 characters.
+            </div>
+            </div>
+        </div>
+
+
+        <div class="text-center mb-sm-5 bg-light coolinput mx-5 ">
+          <label for="input" class="text bg-light">Phone</label>
+            <input formControlName="phone"  class="form-control p-3" type="text" placeholder="phone" >
+            <div
+          *ngIf="
+            form.get('phone')?.invalid &&
+            (form.get('phone')?.touched || form.get('phone')?.dirty)
+          "
+        >
+          <div
+            *ngIf="form.get('phone')?.hasError('required')"
+            class="text-danger"
+          >
+             phone is required.
+          </div>
+          <div
+            *ngIf="form.get('phone')?.hasError('maxlength')"
+            class="text-danger"
+          >
+            Max length for phone is 20 numbers.
+          </div>
+          <div
+            *ngIf="form.get('phone')?.hasError('pattern')"
+            class="text-danger"
+          >
+            enter valid phone number
+          </div>
+          
+            </div>
+            
+        </div>
+        <button (click)="add()" class="btn btn-background fw-bold fs-4" [disabled]="!form.valid">Add</button>
+
+    </form>
+</div>

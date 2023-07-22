@@ -1,0 +1,74 @@
+<div class="container-fluid mb-sm-5">
+  <div class="wrapper vh-75 mt-3">
+    <div class="row align-items-center h-100">
+      <div class="col-lg-4 offset-lg-4">
+        <div class="mx-auto" style="width: 400px">
+          <div class="card p-4">
+            <!-- <div class="d-flex justify-content-center">
+                  <div class="icon-block">
+                    <img src="https://img.icons8.com/ios/50/2E9AFE/lock-2.png"/>
+                  </div>
+                </div> -->
+            <div class="text-center my-4">
+              <h2 class="fw-bold">Verify Your Code</h2>
+              <div class="text-muted">
+                Enter 5-digit code from yout two factor authentication APP.
+              </div>
+            </div>
+            <form [formGroup]="form">
+              <div *ngIf="respomseError" class="text-center text-danger fs-2">
+                <p>{{ respomseError }}</p>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="code1"
+                    maxlength="1"
+                    formControlName="code1"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="code2"
+                    maxlength="1"
+                    formControlName="code2"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="code3"
+                    maxlength="1"
+                    formControlName="code3"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="code4"
+                    maxlength="1"
+                    formControlName="code4"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="code5"
+                    maxlength="1"
+                    formControlName="code5"
+                  />
+                </div>
+              </div>
+              <button
+                class="btn btn-success btn-lg w-100 mt-3 mb-4 py-3"
+                (click)="verify()"
+                [disabled]="!form.valid"
+              >
+                Verify
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

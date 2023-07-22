@@ -1,0 +1,152 @@
+<!--<div *ngIf="details">
+    <div *ngFor="let p of details.orderProducts">
+        <p>{{p.title}}</p>
+        <p>{{p.quantity}}</p>
+        <p>{{p.price}}</p>
+
+    </div>
+   <div *ngIf="details.orderAddress">
+        <p>{{details.orderAddress.city}}</p>
+
+    </div>
+    <p>{{totalp}}</p>
+</div>-->
+
+<!---<div><h5> Total price : ${{totalp}}</h5></div> 
+
+<div class="card d-grid " style="width: 18rem;" *ngIf="details">
+    <div class="row">
+        <div class="col-lg-8">
+    <div *ngFor="let p of details.orderProducts" class="container d-grid">
+    <img src="https://m.media-amazon.com/images/I/81VBQJoT5JL.__AC_SY300_SX300_QL70_ML2_.jpg" class="zoom">
+    <div class="card-body" >
+        <p>Product Name: {{p.title}}</p>
+        <p>Quantity : {{p.quantity}}</p>
+        <p>Price : ${{p.price}}</p>
+    </div>z
+    <div *ngIf="details.orderAddress">
+        <p>Address: {{details.orderAddress.street}},{{details.orderAddress.city}}</p>
+        <p>Phone:{{details.orderAdress.phone}}</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>-->
+
+<!--<section style="background-color: #eee;"*ngIf="details">
+    <div class="card-group ms-5 my-3 d-grid p-3">
+        <div class=" row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-3" *ngFor="let item of details.orderProducts">
+        <div class="card">
+            <img class="card-img-top mt-2" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/3.webp" height="200px" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">Price : ${{item.quantity}}</p>
+
+                <p class="card-text">Price : ${{item.price}}</p>
+
+                <a class="btn btn-primary lightcolor" routerLink="/products/{{item.productId}}">Product
+                    Details</a>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+ <div *ngFor="let i of details"  class="d-flex flex-column">
+        <ul *ngIf="details.orderAddress">
+                Address : {{<details></details>.orderAddress.street}},{{i.orderAddress.city}}
+                Phone : {{i.orderAddress.phone}}
+                Total Price : {{totalp}}
+                <h1>hi</h1>
+        </ul>
+
+    </div>
+  </section>
+
+
+</div>-->
+
+<div class="container d-flex justify-content-center m-0 p-0 mt-5">
+    <div class="col-lg-4 m-0 p-0">
+        <app-profile></app-profile>
+    </div>
+
+
+
+    <div class=" col-lg-8 m-0 p-0 mx-3 bg-light roundedd w-75 mb-5">
+        <div class="card-group my-3 d-grid mx-2 ms-5" *ngIf="details">
+            <div class="row ps-2 ms-3">
+                <div class="border p-3 w-75 ms-5 mt-2 my-0 background adjust">
+                    <ul *ngIf="details.orderAddress" class="mx-5 py-0 my-0 background ">
+                        <li class="fs-2 text-center text-white ">Order Details</li>
+                        <li class="fs-5 d-flex flex-start text-white">Address : {{details.orderAddress.street}} /
+                            {{details.orderAddress.city}}</li>
+                        <li class="fs-5 mb-0 mt-0 text-white"> Phone : {{details.orderAddress.phone}}</li>
+                        <li class="fw-bold fs-5 move-right text-white"> Total Price : ${{totalp}}</li>
+                    </ul>
+
+                </div>
+                <!-- <div class="col-lg-5 col-md-6 col-sm-6 mt-3 mx-2" *ngFor="let item of details.orderProducts">
+                    <div class="card mx-3 col-lg-12 px-2 py-2">
+                        <img class="card-img-top" src="{{item.image}}" height="200px" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.title}}</h5>
+                            <p class="card-text">Price: $ {{item.price}}</p>
+                            <p class="card-text">Quantity: {{item.quantity}}</p>
+                            <button class="btn btn-primary lightcolor m-3 me-2 px-2 py-2"
+                                routerLink="/Products/{{item.product_Id}}">Product
+                                Details</button>
+                            <form *ngIf="!item.isReviewed && orderStatus">
+                                <input type="text" #comment>
+                                <select name="rating" id="" #rating>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <button (click)="AddReview(comment.value,rating.value,item.product_Id)">submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="card-group my-3 d-grid" *ngIf="details">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 col-sm-6 mt-3 mx-3" *ngFor="let item of details.orderProducts">
+                            <div class="card">
+                                <img class="card-img-top" src="{{item.image}}" height="200px" alt="Card image cap">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title" id="title" routerLink="/Products/{{item.product_Id}}">
+                                        {{item.title}}</h5>
+                                    <p class="card-text">Price: $ {{item.productPriceAtThisTime}}</p>
+                                    <p class="card-text">Quantity: {{item.quantity}}</p>
+                                    <hr class="my-3">
+                                    <form *ngIf="!item.isReviewed && orderStatus">
+                                        <h5 class="logocolortxt my-2">Make Review:</h5>
+                                        <label for="comment">Comment</label>
+                                        <input type="text" class="w-100" #comment>
+                                        <label for="rating">Rate</label>
+                                        <select name="rating" class="w-25 ml-3 bg-white" #rating>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <button (click)="AddReview(comment.value,rating.value,item.product_Id)"
+                                            class="btn btn-primary lightcolor m-3 me-2 px-2 py-2">Make Review</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

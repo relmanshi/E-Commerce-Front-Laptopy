@@ -1,0 +1,19 @@
+<div class="d-flex flex-column justify-content-center">
+    <mat-form-field>
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="selectedValue">
+            <mat-option value="0">Pending</mat-option>
+            <mat-option value="1">Processing</mat-option>
+            <mat-option value="2">Shipped</mat-option>
+            <mat-option value="3">Delivered</mat-option>
+            <mat-option value="4">Cancelled</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="form-group text-center mt-sm-5">
+        <button (click)="EditOrder()" type="submit" class="btn btn-success logocolor bt-lg w-50 fs-5 fw-bold">
+            Edit Order
+        </button>
+    </div>
+
+</div>

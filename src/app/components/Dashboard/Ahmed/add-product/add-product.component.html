@@ -1,0 +1,90 @@
+<div class="container mt-5">
+  <h3 class="title logocolortxt"><strong>Add Product</strong></h3>
+  <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+    <!--productForm name field-->
+    <div class="row mt-4">
+      <mat-form-field appearance="outline" class="col-12">
+        <mat-label>productForm Name:</mat-label>
+        <input matInput [(ngModel)]="product.Name" name="productFormName" required #productFormName="ngModel" [maxlength]="20"/>
+        <mat-error *ngIf="!product.Name">productForm Name is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!--Image Upload-->
+    <div class="formbold-main-wrapper">
+      <div class="formbold-form-wrapper">
+        <div class="mb-6 pt-4">
+          <label class="formbold-form-label formbold-form-label-2" style="text-align: center">
+            Upload productForm Images
+          </label>
+
+          <div class="formbold-mb-5 formbold-file-input">
+            
+               <input type="file" name="file" id="file" multiple accept="image/*" max="5"
+              (change)="uploadPhotos($event)"
+               />
+            <label for="file">
+              <div id>
+                <span class="formbold-drop-file"> Drop files here </span>
+                <span class="formbold-or"> Or </span>
+                <span class="formbold-browse"> Browse </span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row my-4">
+
+      <!--Address field-->
+      <mat-form-field class="col-12 col-md-6 col-lg-4" appearance="outline">
+        <mat-label>Description:</mat-label>
+        <input matInput [(ngModel)]="product.Description" name="Description" required type="text" />
+        <mat-error *ngIf="productForm.controls['Description']?.errors">Description is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row my-4">
+      <!--Category field-->
+      <mat-form-field class="col-12 col-md-6 col-lg-6" appearance="outline">
+        <mat-label>Category:</mat-label>
+        <mat-select [(ngModel)]="selectedCategory" name="category" required>
+          <mat-option value="">Select Category</mat-option>
+          <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!selectedCategory">Category is required</mat-error>
+      </mat-form-field>
+
+      <div class="row my-4">
+        <mat-form-field class="col-6 col-md-4" appearance="outline">
+          <mat-label>Model:</mat-label>
+          <input matInput [(ngModel)]="product.Model" name="Modele" type="text" required min="1" />
+          <mat-error *ngIf="productForm.controls['Model']?.errors">Model has a minimum of 1</mat-error>
+        </mat-form-field>
+
+        <!--Discount count field-->
+        <mat-form-field class="col-6 col-md-4" appearance="outline">
+          <mat-label>Discount:</mat-label>
+          <input matInput [(ngModel)]="product.Discount" name="Discount" type="number" required [min]="0" [max]="100" />
+          <mat-error *ngIf="productForm.controls['Discount']?.errors">Discount Count has a minimum of 1</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="col-6 col-md-4" appearance="outline">
+          <mat-label>Price:</mat-label>
+          <input matInput [(ngModel)]="product.Price" name="price" type="number" required min="1" />
+          <mat-error *ngIf="productForm.controls['price']?.errors">Bed Count has a minimum of 1</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+
+    <!--add productForm Button-->
+    <div class="row mt-3">
+      <button mat-raised-button class="logocolor text-white" type="submit">Add productForm</button>
+    </div>
+  </form>
+</div>

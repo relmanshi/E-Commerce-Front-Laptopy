@@ -1,0 +1,99 @@
+.centered-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+}
+
+.card-msg {
+  width: 300px;
+  background-color: #164e63;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.card-body-msg {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title-msg {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text-msg {
+  font-size: 16px;
+}
+
+.card-wrapper {
+  display: flex;
+}
+
+.card {
+  flex: 1;
+}
+.card-header {
+  background-color: #164e63;
+}
+
+.CustomText {
+  color: white;
+}
+.FilterElements {
+  color: white;
+  text-decoration: none; /* Remove default underline */
+  text-align: center;
+}
+.FilterElements:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+.custom-button {
+  background-color: #164e63;
+  color: white;
+  border: none;
+  padding: 10px;
+  /* Add any other custom styles you desire */
+}
+
+.heartWishList {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 500px) {
+  .tryfix {
+    height: 25%;
+  }
+}
+
+.applyButton,
+.resetButton {
+  width: 100%;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #2e6e85;
+}
+
+.applyButton:hover,
+.resetButton:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: #2e6e85;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}

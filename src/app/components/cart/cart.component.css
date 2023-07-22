@@ -1,0 +1,78 @@
+.checkoutButton {
+  width: 100%;
+  color: #000;
+  border: 1px solid #2e6e85;
+}
+
+.checkoutButton:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: #2e6e85;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+.centered-message {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) and (max-width: 890px) {
+  .centered-message {
+    width: 60%;
+  }
+}
+
+@media (max-width: 640px) {
+  .centered-message {
+    width: 100%;
+  }
+}
+
+.card-msg {
+  background-color: #164e63;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.card-body-msg {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title-msg {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text-msg {
+  font-size: 16px;
+}
+
+.btnShoping {
+  background-color: #fff;
+  color: #164e63 !important;
+}
+
+.btnShoping:hover {
+  opacity: 0.9;
+}
+
+.removeAllButton {
+  width: 100%;
+  color: #000;
+  border: 1px solid #2e6e85;
+}
+
+.removeAllButton:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: rgb(219, 36, 36);
+  letter-spacing: 1px;
+  transition: 0.5s;
+}

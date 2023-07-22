@@ -1,0 +1,70 @@
+.slider {
+  background-color: lightgray;
+  
+}
+
+.carousel-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+
+.carousel-one {
+  background-image: url("https://img.freepik.com/free-psd/laptop-mock-up_1310-197.jpg?w=1060&t=st=1688488362~exp=1688488962~hmac=c53e7b94dc38b8dbc1f341f5cf02a83f3d0fad13f4ad26c687bf34c7a5bd387a");
+}
+
+.carousel-two {
+  background-image: url("https://img.freepik.com/free-photo/top-view-person-writing-laptop-with-copy-space_23-2148708035.jpg?w=1060&t=st=1688488467~exp=1688489067~hmac=20af0792e7f974f5baaaeccdc0223f7c65a6cf339a02ec99a8d5170b802ed28a");
+}
+
+.carousel-three {
+  background-image: url("https://img.freepik.com/free-photo/crop-man-with-laptop-sofa_23-2147769493.jpg?w=1060&t=st=1688488508~exp=1688489108~hmac=6c5e531ab4201ca563d5ec69d4220c6becf12fab01888eff000646c69f382ea8");
+}
+
+
+.card-wrapper {
+  display: flex;
+}
+
+.card {
+  flex: 1;
+}
+
+.badge-new {
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: #00aaff;
+  color: #fff;
+}
+.addposition{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+/* .NewArrival {
+  
+    font-size: 36px;
+    color: #164e63;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  .testposition{
+    position: relative;
+  }
+  .addposition{
+    position: absolute;
+  top: 10px;
+  left: 250px;
+  } */
+
+@media (min-width:500px) {
+  
+  .card-wrapper{
+    max-width: 50%;
+  }
+}

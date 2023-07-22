@@ -1,0 +1,61 @@
+<div class="container-fluid px-4 my-3">
+    <div class="grid grid-cols-12 gap-6 mt-5 ">
+        <div *ngIf="User">
+            <h2 class="text-uppercase">{{User.fName}} {{User.lName}}</h2>
+            <span>{{User.email}} ({{User.role}})</span>
+        </div>
+        <mat-tab-group class="py-3">
+            <mat-tab label="User Addresses">
+                <div class="py-3">
+                    <table *ngIf="User" class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Street</th>
+                                <th scope="col">Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of User.userAddresses; let i = index">
+                                <td>{{i + 1}}</td>
+                                <td>{{item.city}}</td>
+                                <td>{{item.street}}</td>
+                                <td>{{item.phone}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-tab>
+            <mat-tab label="User Orders">
+                <div class="py-3">
+                    <table *ngIf="User" class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">Order Date</th>
+                                <th scope="col">Order Status</th>
+                                <th scope="col">Deliverd Date</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of User.orders; let i = index">
+                                <td>{{i + 1}}</td>
+                                <td>{{item.orderDate}}</td>
+                                <td>{{item.orderStatus}}</td>
+                                <td>{{item.deliverdDate}}</td>
+                                <td><a class="btn btn-primary lightcolor" routerLink="/dashboard/orders/{{item.id}}">Details</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+
+        <div class="d-grid gap-2 d-md-block">
+            <a class="btn btn-primary logocolor" routerLink="/dashboard/users"><i class="fas fa-arrow-left" style="color: #FFFFFF;"></i> Go To Users</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+html,
+body {
+  height: 100%;
+  padding-top: 40px !important;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.star-rating {
+  fill: gold;
+}
+
+.sale {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  color: #fff;
+  width: 60px;
+  height: 25px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.popupComponent {
+  width: 500px;
+  height: 250px;
+  border-radius: 35px;
+}
+
+.bigpopupComponent{
+  width: 700px;
+  border-radius: 35px;
+}
+
+.lightcolor {
+  background-color: #0e7490 !important;
+  border-color: #0e7490 !important;
+}
+
+.logocolor {
+  background-color: #164e63 !important;
+  border-color: #164e63 !important;
+}
+
+.logocolortxt {
+  color: #164e63 !important;
+}
+
+.mdc-tab--active .mdc-tab__text-label {
+  color: #164e63 !important;
+  font-weight: bold !important;
+  font-size: 1.4rem !important;
+}
+
+.mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+  border-color: #164e63 !important;
+}
+
+.card-wrapper {
+  display: flex;
+}
+
+.card {
+  flex: 1;
+}
+
+
+.customColor{
+  color:#164e63
+}
+
+/* ngx-pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination li {
+  list-style: none;
+  margin-right: 10px;
+}
+
+.pagination li a {
+  color: #333;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.pagination li.active a {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.pagination li.disabled a {
+  color: #ccc;
+}
+
+.pagination li:first-child a,
+.pagination li:last-child a {
+  border-radius: 50%;
+  padding: 5px 8px;
+}
+.nameColor {
+  color: #164e63;
+  text-decoration: none; 
+}
+
+.nameColor:hover {
+  text-decoration: underline;
+}
+
+.CustomDarkText{
+  color: #164e63;;
+}
+
+.HomeSection {
+  background-color: #164e63;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.HomeSection h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+} 
+.custom-button {
+  background-color: #164e63;
+  color: white;
+  border: none;
+  padding: 10px;}
+
+  .toasterStyle{
+
+    position: fixed;
+    top: 100px;
+    right: 50px;
+  }
+
+
+
+
+
+
+
+
+
+
+  

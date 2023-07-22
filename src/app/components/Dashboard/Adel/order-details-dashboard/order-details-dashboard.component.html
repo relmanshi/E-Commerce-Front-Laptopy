@@ -1,0 +1,59 @@
+<div class="container-fluid px-5 my-3">
+    <div class="d-flex justify-content-between gap-6 mt-5 " *ngIf="Order">
+        <div class="w-100">
+            <h2>Order ID : #{{Order.id}}</h2>
+            <div class="card my-3 p-3" style="width: 100%;">
+                <table class="table table-borderless mt-2">
+                    <thead class="border-bottom">
+                        <tr>
+                            <th class="whitespace-nowrap">Order Details</th>
+                            <th class="whitespace-nowrap"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="intro-x">
+                            <td class="w-40">
+                                <p class="card-text"><strong>User Name:</strong> {{Order.userName}}</p>
+                                <p class="card-text"><strong>Address:</strong> {{Order.city}} / {{Order.street}}</p>
+                                <p class="card-text"><strong>Phone:</strong> {{Order.phone}}</p>
+                                <p class="card-text"><strong>Products:</strong> {{Order.productCount}}</p>
+                                <p class="card-text"><strong>Total Price:</strong> {{Order.totalPrice}}</p>
+                            </td>
+                            <td class="w-40">
+                                <p class="card-text"><strong>Date:</strong> {{Order.formattedCreationDate}}</p>
+                                <p class="card-text"><strong>Status:</strong> {{Order.orderStatus}}</p>
+                                <p class="card-text"><strong>Delivered Date:</strong>
+                                    {{Order.formattedDeliveredDate}}</p>
+                                <a class="btn btn-primary logocolor" (click)="openPopup()">Edit Status</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-group my-3 d-grid" *ngIf="Order">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 mt-3" *ngFor="let item of Order.productsInOrder">
+                <div class="card">
+                    <img class="card-img-top" src="{{item.productImage}}" height="200px" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.productName}}</h5>
+                        <p class="card-text">Price: {{item.quantity}} * {{item.productPrice - (item.productPrice *
+                            (item.discount/100))}} = {{item.quantity * (item.productPrice - (item.productPrice *
+                            (item.discount/100)))}}</p>
+                        <a class="btn btn-primary lightcolor"
+                            routerLink="/dashboard/products/{{item.productId}}">Product
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-grid gap-2 d-md-block">
+        <a class="btn btn-primary logocolor" routerLink="/dashboard/orders"><i class="fas fa-arrow-left"
+                style="color: #FFFFFF;"></i> Go To Orders</a>
+    </div>
+</div>

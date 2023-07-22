@@ -1,0 +1,13 @@
+<div class="col-lg-8 p-3 general-background"*ngIf="address">
+    <h3 class="text-white">Edit Address</h3>
+    <form class="d-flex justify-content-space-between flex-column ">
+        <input #city class="form-control my-3 p-3" type="text" placeholder="city" value="{{address.city}}">
+        <input #street class="form-control my-3 p-3" type="text" placeholder="street" value="{{address.street}}">
+        <input #phone class="form-control my-3 p-3" type="text" placeholder="phone" value="{{address.phone}}">
+        <!-- <div class="form-group mt-sm-3 d-flex flex-row" *ngIf="address.defaultAddress== false">
+            <input #defaultt type="radio" id="default" value="false" formControlName="role" >
+            <label class="mx-2 text-white" for="default">Make This Default Address</label><br>
+        </div> -->
+    </form>
+    <button class="btn btn-primary"(click)="update(address.id,city.value,street.value,phone.value)">Update</button>
+</div>

@@ -1,0 +1,145 @@
+  .carousel-indicators {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* test button add to cart */
+
+  .CartBtn {
+    width: 140px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color:  #164e63;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: .5s;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+  }
+  
+  .IconContainer {
+    position: absolute;
+    left: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: .5s;
+  }
+  
+  .icon {
+    border-radius: 1px;
+  }
+  
+  .text {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    z-index: 1;
+    transition-duration: .5s;
+    font-size: 1.04em;
+    font-weight: 500;
+  }
+  
+  /* .CartBtn:hover .IconContainer {
+    transform: translateX(300px);
+    border-radius: 40px;
+    transition-duration: 3s;
+  } */
+
+  .CartBtn:hover .IconContainer {
+    transform: translateX(300px);
+    border-radius: 40px;
+    transition-duration: 3s;
+  }
+
+  .CartBtn:hover .text.mb-0 {
+    display: none;
+  }
+  
+  
+  .CartBtn:active {
+    transform: scale(0.95);
+    transition-duration: .5s;
+  }
+
+  .mr-3{
+    margin-right: 20px;
+  }
+
+  
+.card-wrapper {
+  display: flex;
+}
+
+/* .card {
+  flex: 1;
+} */
+
+.badge-new {
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: #00aaff;
+  color: #fff;
+}
+.addposition{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+/* .NewArrival {
+  
+    font-size: 36px;
+    color: #164e63;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  .testposition{
+    position: relative;
+  }
+  .addposition{
+    position: absolute;
+  top: 10px;
+  left: 250px;
+  } */
+
+@media (min-width:500px) {
+  
+  .card-wrapper{
+    max-width: 50%;
+  }
+}
+
+  

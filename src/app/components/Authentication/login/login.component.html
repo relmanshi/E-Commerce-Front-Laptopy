@@ -1,0 +1,120 @@
+<!-- <div class="container mt-sm-5  mb-sm-5">
+  <form [formGroup]="form">
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label fs-5 fw-bold"
+        >Email</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="email"
+          formControlName="username"
+          class="form-control"
+          id="inputEmail3"
+          placeholder="Email Address"
+        />
+      </div>
+    </div>
+    <div class="row mb-3 mt-sm-5">
+      <label for="inputPassword3" class="col-sm-2 col-form-label fs-5 fw-bold"
+        >Password</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          id="inputPassword3"
+          placeholder="Password"
+        />
+      </div>
+      <a class="text-end mt-sm-2 fs-5" routerLink="">Forget Password?</a>
+    </div>
+    <div class="mt-sm-5 text-center">
+      <button
+        (click)="handelSubmit($event)"
+        type="submit"
+        class="btn btn-primary btn-lg w-25 fs-5"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+</div> -->
+
+<div class="container mt-5">
+  <div *ngIf="respomseError" class="text-center text-danger fs-2">
+    <p>{{ respomseError }}</p>
+  </div>
+  <div class="row">
+    <form [formGroup]="form">
+      <div class="form-floating mb-5">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          formControlName="username"
+        />
+        <label for="floatingInput">Email address</label>
+
+        <div
+          *ngIf="
+            form.get('username')?.invalid &&
+            (form.get('username')?.touched || form.get('username')?.dirty)
+          "
+        >
+          <div
+            *ngIf="form.get('username')?.hasError('email')"
+            class="text-danger"
+          >
+            Please Write Valid Email.
+          </div>
+          <div
+            *ngIf="form.get('username')?.hasError('required')"
+            class="text-danger"
+          >
+            Email is Required.
+          </div>
+        </div>
+      </div>
+      <div class="form-floating mb-2">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <label for="floatingPassword">Password</label>
+        <div
+          *ngIf="
+            form.get('password')?.invalid &&
+            (form.get('password')?.touched || form.get('password')?.dirty)
+          "
+        >
+          <div
+            *ngIf="form.get('password')?.hasError('required')"
+            class="text-danger"
+          >
+            Password Name is required.
+          </div>
+        </div>
+      </div>
+      <div class="mb-sm-5">
+        <a class="text-end fs-5" routerLink="/Authentication/forget_password"
+          >Forget Password?</a
+        >
+      </div>
+      <div class="text-center mb-5">
+        <button
+          class="btn btn-primary w-25 py-2"
+          type="submit"
+          (click)="handelSubmit()"
+          [disabled]="!form.valid"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

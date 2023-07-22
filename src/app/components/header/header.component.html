@@ -1,0 +1,165 @@
+
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-around fixed-top zindex"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/images/Logo.png" width="220px" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-around"
+      id="navbarSupportedContent"
+    >
+      <form class="d-flex col-sm-12 col-md-12 col-lg-4" role="search">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search..."
+          aria-label="Search"
+          #searchQuery
+          (keyup.enter)="onEnterKey(searchQuery.value)"
+        />
+      </form>
+
+      <!-- <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link text-black"> Home </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Products" class="nav-link text-black"> Products</a>
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="/Profile"
+            class="nav-link text-black"
+            *ngIf="isUserLoggedIn"
+          >
+            Profile
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            routerLink="/dashboard/home"
+            class="nav-link text-black"
+            *ngIf="isUserLoggedIn && isAdmin"
+          >
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/contact-us" class="nav-link text-black">
+            Contact Us</a
+          >
+        </li>
+
+        <li class="nav-item me-3 mb-2 mt-2">
+          <a
+            routerLink="cart"
+            class="cart position-relative d-inline-flex"
+            aria-label="View your shopping cart"
+          >
+            <i class="fas fa fa-shopping-cart fa-lg" id="testelcart"></i>
+            <span
+              class="cart-basket d-flex align-items-center justify-content-center"
+            >
+              {{ cartCouter }}
+            </span>
+          </a>
+        </li>
+        <li class="nav-item mt-2 me-4">
+          <a
+            routerLink="/wishList"
+            class="cart position-relative d-inline-flex"
+            aria-label="View your wishList cart"
+          >
+            <i
+              class="fa-regular fa-heart fa-beat fa-lg"
+              id="testelwishlist"
+            ></i>
+            <span
+              class="cart-basket d-flex align-items-center justify-content-center"
+            >
+              {{ whishListCouter }}
+            </span>
+          </a>
+        </li>
+        <li class="nav-item me-1" *ngIf="!isUserLoggedIn">
+          <a
+            id="loginBtn"
+            class="nav-link btn btn-primary hoverWhite"
+            routerLink="/Authentication/login"
+            routerLinkActive="active"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!isUserLoggedIn">
+          <a
+            class="nav-link btn btn-success hoverWhite"
+            routerLink="/Authentication/register"
+            routerLinkActive="active"
+            >Register</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a class="nav-link btn btn-danger hoverWhite" (click)="LogOut()"
+            >Logout</a
+          >
+        </li>
+      </ul> -->
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a routerLink="/about-us" class="nav-link" routerLinkActive="active"> About Us</a>
+        </li> -->
+        <li class="nav-item">
+          <a routerLink="/Products" class="nav-link" routerLinkActive="active"> Products</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Profile" class="nav-link" *ngIf="isUserLoggedIn" routerLinkActive="active"> Profile </a>
+        </li>
+      
+        <li class="nav-item">
+          <a routerLink="/dashboard/home" class="nav-link" *ngIf="isUserLoggedIn && isAdmin" routerLinkActive="active" > Dashboard </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/contact-us" class="nav-link" routerLinkActive="active"> Contact Us </a>
+        </li>
+        <li class="nav-item me-3 mb-2 mt-2">
+          <a routerLink="cart" class="cart position-relative d-inline-flex" aria-label="View your shopping cart">
+            <i class="fas fa fa-shopping-cart fa-lg " id="testelcart"></i>
+            <span class="cart-basket d-flex align-items-center justify-content-center">{{ cartCouter }}</span>
+          </a>
+        </li>
+        <li class="nav-item mt-2 me-4">
+          <a routerLink="/wishList" class="cart position-relative d-inline-flex" aria-label="View your wishList cart">
+            <i class="fa-regular fa-heart fa-beat fa-lg" id="testelwishlist"></i>
+            <span class="cart-basket d-flex align-items-center justify-content-center">{{ whishListCouter }}</span>
+          </a>
+        </li>
+        <li class="nav-item me-1" *ngIf="!isUserLoggedIn">
+          <a id="loginBtn" class="nav-link btn btn-primary hoverWhite" routerLink="/Authentication/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!isUserLoggedIn">
+          <a class="nav-link btn btn-success hoverWhite" routerLink="/Authentication/register" routerLinkActive="active">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a class="nav-link btn btn-danger hoverWhite" (click)="LogOut()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,26 @@
+.bg-color {
+  background-color: white;
+}
+/* .container {
+  width: 100%;
+  height: 100%;
+} */
+/* nav {
+  height: 10%;
+} */
+span {
+  font-size: large;
+}
+.list-group {
+  border-radius: 10px;
+}
+.zoom {
+  transition: transform 0.2s;
+  color: #989ca0;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  color: #164e63;
+  cursor: pointer;
+}

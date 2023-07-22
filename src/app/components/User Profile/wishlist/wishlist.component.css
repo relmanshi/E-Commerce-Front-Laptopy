@@ -1,0 +1,95 @@
+
+
+.wishlist {
+  color: red;
+}
+
+.wishListTitle {
+  background-color: #2e6e85;
+  color: white;
+}
+
+.centered-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-msg {
+  background-color: #164e63;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.card-body-msg {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title-msg {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text-msg {
+  font-size: 16px;
+}
+
+.btnShoping {
+  background-color: #fff;
+  color: #164e63 !important;
+}
+
+.btnShoping:hover {
+  opacity: 0.9;
+}
+
+
+.card-wrapper {
+  display: flex;
+}
+
+/* .card {
+  flex: 1;
+} */
+
+.badge-new {
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: #00aaff;
+  color: #fff;
+}
+.addposition{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+/* .NewArrival {
+  
+    font-size: 36px;
+    color: #164e63;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  .testposition{
+    position: relative;
+  }
+  .addposition{
+    position: absolute;
+  top: 10px;
+  left: 250px;
+  } */
+
+@media (min-width:500px) {
+  
+  .card-wrapper{
+    max-width: 50%;
+  }
+}

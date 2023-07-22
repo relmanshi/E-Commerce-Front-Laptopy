@@ -1,0 +1,121 @@
+/** {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+.container {
+  width: 100%;
+}
+
+.general-colour {
+  color:#083a4c;
+}
+.general-background {
+  background-color: #dee0e0;
+}
+button {
+  padding: 2%;
+}
+.adjust {
+  margin-left: 10%;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+input {
+  width: 50%;
+  margin-left: 25%;
+}
+.borderr {
+  border-radius: 5%;
+}
+*/
+.coolinput {
+  display: flex;
+  flex-direction: column;
+  position: static;
+}
+
+.coolinput label.text {
+  font-size: 1.2rem;
+  color: #164e63;
+  font-weight: 700;
+  position: relative;
+  top: 0.5rem;
+  margin: 0 0 0 7px;
+  padding: 0 3px;
+  background: #e8e8e8;
+  width: fit-content;
+}
+
+.coolinput input[type=text].input {
+  padding: 11px 10px;
+  font-size: 0.75rem;
+  border: 2px #164e63;
+  border-radius: 5px;
+  background: #e8e8e8;
+  width: 70%;
+}
+
+.coolinput input[type=text].input:focus {
+  outline: none;
+}
+.colour{
+  background-color:#164e63;
+  
+}
+.colourb{
+background-color: #1d6d8a;
+}
+.roundedd{
+ border-radius: 10%;
+}
+/* .width{
+  width: 55%;
+} */
+
+
+.card-wrapper {
+  display: flex;
+}
+
+/* .card {
+  flex: 1;
+} */
+
+.badge-new {
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: #00aaff;
+  color: #fff;
+}
+.addposition{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+/* .NewArrival {
+  
+    font-size: 36px;
+    color: #164e63;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  .testposition{
+    position: relative;
+  }
+  .addposition{
+    position: absolute;
+  top: 10px;
+  left: 250px;
+  } */
+
+@media (min-width:500px) {
+  
+  .card-wrapper{
+    max-width: 50%;
+  }
+}
